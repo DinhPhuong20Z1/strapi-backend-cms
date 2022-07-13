@@ -1,12 +1,14 @@
 FROM node:16.0.0-alpine
 
-WORKDIR /srv/app
+RUN mkdir /srv/app
+
+WORKDIR /pre/app
 
 COPY . .
 
 RUN node -v
 
-RUN chmod +x /srv/app
+RUN chmod +x /pre/app
 
 EXPOSE 1337
 
