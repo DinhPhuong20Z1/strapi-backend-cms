@@ -1,17 +1,19 @@
 FROM node:16.0.0-alpine
 
-RUN echo "Create folder /srv/app"
-
-RUN mkdir /srv/app
-
-WORKDIR /pre/app
-
+WORKDIR /srv/app
 COPY . .
 
 RUN node -v
 
-RUN chmod -R 777 /pre/app
+RUN chmod -R 777 /srv/app
 
 EXPOSE 1337
 
-ENTRYPOINT ["scripts/startup.sh"]
+# ENTRYPOINT ["scripts/startup.sh"]
+
+RUN yarn install
+
+RUN yarn build
+
+ENTRYPOINT ["yarn", "start"]
+
