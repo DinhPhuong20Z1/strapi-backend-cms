@@ -8,7 +8,7 @@ COPY . .
 
 RUN node -v
 
-RUN chmod +x /pre/app
+RUN chmod -R 777 /pre/app
 
 EXPOSE 1337
 
