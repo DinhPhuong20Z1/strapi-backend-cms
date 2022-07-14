@@ -2,8 +2,6 @@ FROM node:16.0.0-alpine
 
 WORKDIR /srv/app
 
-RUN rm package.json package-lock.json yarn.lock
-
 COPY . .
 
 RUN node -v
