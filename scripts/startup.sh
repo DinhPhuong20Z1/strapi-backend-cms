@@ -6,4 +6,4 @@ cp -r /pre/app/* /srv/app
 
 cd /srv/app
 
-yarn start
+yarn develop
