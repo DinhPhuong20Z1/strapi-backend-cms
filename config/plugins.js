@@ -1,4 +1,4 @@
-module.exports = () => ({
+module.exports = ({ env }) => ({
   graphql: {
     enabled: false,
     config: {
