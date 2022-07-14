@@ -12,7 +12,5 @@ EXPOSE 1337
 
 RUN yarn install
 
-RUN yarn build
-
 ENTRYPOINT ["scripts/startup.sh"]
 
