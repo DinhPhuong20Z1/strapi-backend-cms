@@ -1,6 +1,6 @@
 module.exports = () => ({
   graphql: {
-    enabled: true,
+    enabled: false,
     config: {
       playgroundAlways: false,
       defaultLimit: 20,
