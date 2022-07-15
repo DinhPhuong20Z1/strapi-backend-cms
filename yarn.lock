@@ -10110,6 +10110,11 @@ strapi-plugin-populate-deep@^0.1.2:
   resolved "https://registry.yarnpkg.com/strapi-plugin-populate-deep/-/strapi-plugin-populate-deep-0.1.2.tgz#89e9fa0dd10bb1c57336625f765cff98950dafa2"
   integrity sha512-cYmK5g4QqrGAWjUzEnd6P1XcqeXFcu/2yk/lg3ClQDnp46vb9i03CT7tW2YHz9JSf8g371iq0JPholL1q7Q1CA==
 
+strapi-plugin-publisher@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-publisher/-/strapi-plugin-publisher-1.1.3.tgz#198940b83262e92e809d5b7381655a95a187a652"
+  integrity sha512-ntbao9DNI0uLlC9F/rHbgGekq/bbWKXCNv348TEHEN7oaZNiH1cU02kZ9t7v2eVhXRiBVQ7bZtzCF7eWqnStfA==
+
 stream-browserify@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/stream-browserify/-/stream-browserify-3.0.0.tgz"
