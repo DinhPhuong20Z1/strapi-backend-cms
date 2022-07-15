@@ -14,6 +14,4 @@ npm ls --depth 0
 
 yarn install
 
-yarn build
-
 yarn develop
