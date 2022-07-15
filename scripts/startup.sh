@@ -8,8 +8,8 @@ diff /pre/app/package.json /srv/app/package.json
 
 cd /srv/app
 
-RUN yarn install
+yarn install
 
-RUN yarn build
+yarn build
 
 yarn develop
