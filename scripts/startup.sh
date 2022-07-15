@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 rm -rf /srv/app/build /srv/app/config /srv/app/package.json /srv/app/package-lock.json /srv/app/yarn.lock
 
