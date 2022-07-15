@@ -4,8 +4,6 @@ WORKDIR /pre/app/
 
 COPY . .
 
-RUN node -v
-
 RUN chmod -R 777 /pre/app/
 
 EXPOSE 1337

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 rm -rf /srv/app/build /srv/app/config /srv/app/node_modules
 
