@@ -8,9 +8,9 @@ RUN chmod -R 777 /pre/app/
 
 EXPOSE 1337
 
-RUN yarn install
+# RUN yarn install
 
-RUN yarn build
+# RUN yarn build
 
 ENTRYPOINT ["scripts/startup.sh"]
 
