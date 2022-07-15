@@ -242,4 +242,10 @@ module.exports = ({ env }) => ({
       },
     },
   },
+    'import-export-entries': {
+      enabled: true,
+      config: {
+        serverPublicHostname: 'https://cms.volio.vn', // default: "".
+      },
+    },
 });
