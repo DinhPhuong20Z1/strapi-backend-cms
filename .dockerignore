@@ -1,7 +1,6 @@
 node_modules
 .cache
 .tmp
-yarn.lock
 package-lock.json
 .editorconfig
 .gitignore
