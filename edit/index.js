@@ -1,5 +1,6 @@
+"use strict";
+
 const { SESClient, SendEmailCommand } = require("@aws-sdk/client-ses");
-const { removeUndefined } = require("@strapi/utils");
 
 module.exports = {
   init(providerOptions = {}, settings = {}) {
