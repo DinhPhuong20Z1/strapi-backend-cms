@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = {
   /**
@@ -7,7 +7,11 @@ module.exports = {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/*{ strapi }*/) {},
+  register({ strapi }) {
+    // strapi.plugins.upload.services.upload.uploadFileAndPersist =
+    //   uploader.uploadFileAndPersist;
+    // strapi.plugins.upload.services.upload.remove = uploader.remove;
+  },
 
   /**
    * An asynchronous bootstrap function that runs before
