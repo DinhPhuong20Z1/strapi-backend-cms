@@ -1,3 +1,14 @@
+/* !!
+ * File: plugins.js
+ * File Created: Thursday, 14th July 2022 9:30:03 am
+ * Author: KimEricko™ (phamkim.pr@gmail.com)
+ * -----
+ * Last Modified: Monday, 18th July 2022 5:48:57 pm
+ * Modified By: KimEricko™ (phamkim.pr@gmail.com>)
+ * -----
+ * Copyright 2022 - 2022 Volio, Volio Vietnam
+ */
+
 module.exports = ({ env }) => ({
   graphql: {
     enabled: false,
