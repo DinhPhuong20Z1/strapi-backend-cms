@@ -14,6 +14,6 @@ npm ls --depth 0
 
 yarn install
 
-cp -f /pre/app/edit/index.js /srv/app//node_modules/@strapi/provider-email-amazon-ses/lib
+# cp -f /pre/app/edit/index.js /srv/app//node_modules/@strapi/provider-email-amazon-ses/lib
 
 yarn develop

@@ -56,6 +56,7 @@ module.exports = ({ env }) => ({
     settings: {
       defaultFrom: env("AWS_SES_EMAIL_FROM"),
       defaultReplyTo: env("AWS_SES_EMAIL_REPLY"),
+      testAddress: env("AWS_SES_TESTER_EMAIL"),
     },
   },
   ckeditor: {
