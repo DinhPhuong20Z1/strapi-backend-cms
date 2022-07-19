@@ -41,24 +41,39 @@ module.exports = ({ env }) => ({
   },
   email: {
     config: {
-      provider: "strapi-provider-email-volio",
+      provider: "amazon-ses",
       providerOptions: {
-        host: env("AWS_SES_ENDPOINT"), //SMTP Host
-        port: 465, //SMTP Port
-        secure: true,
-        username: env("AWS_SES_KEY"),
-        password: env("AWS_SES_SECRET"),
-        rejectUnauthorized: true,
-        requireTLS: true,
-        connectionTimeout: 1,
+        key: env("AWS_SES_KEY"),
+        secret: env("AWS_SES_SECRET"),
+        amazon: env("AWS_SES_ENDPOINT"),
+      },
+      settings: {
+        defaultFrom: env("AWS_SES_EMAIL_FROM"),
+        defaultReplyTo: env("AWS_SES_EMAIL_REPLY"),
+        testAddress: env("AWS_SES_TESTER_EMAIL"),
       },
     },
-    settings: {
-      defaultFrom: env("AWS_SES_EMAIL_FROM"),
-      defaultReplyTo: env("AWS_SES_EMAIL_REPLY"),
-      testAddress: env("AWS_SES_TESTER_EMAIL"),
-    },
   },
+  // email: {
+  //   config: {
+  //     provider: "strapi-provider-email-volio",
+  //     providerOptions: {
+  //       host: env("AWS_SES_ENDPOINT"), //SMTP Host
+  //       port: 465, //SMTP Port
+  //       secure: true,
+  //       username: env("AWS_SES_KEY"),
+  //       password: env("AWS_SES_SECRET"),
+  //       rejectUnauthorized: true,
+  //       requireTLS: true,
+  //       connectionTimeout: 1,
+  //     },
+  //   },
+  //   settings: {
+  //     defaultFrom: env("AWS_SES_EMAIL_FROM"),
+  //     defaultReplyTo: env("AWS_SES_EMAIL_REPLY"),
+  //     testAddress: env("AWS_SES_TESTER_EMAIL"),
+  //   },
+  // },
   ckeditor: {
     enabled: true,
     config: {
