@@ -12,8 +12,6 @@ echo "Install dependencies ..."
 
 npm ls --depth 0
 
-# yarn remove strapi-provider-email-smtp
-
 yarn install
 
 yarn develop

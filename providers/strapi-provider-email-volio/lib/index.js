@@ -73,14 +73,16 @@ module.exports = {
 
     return {
       send: (options) => {
-        console.log("Volio Email options: " + JSON.stringify(options))
-        console.log("Volio Email config: " + JSON.stringify(config))
-        console.log("Volio Email Settings: " + JSON.stringify(settings))
+        console.log("Volio Email options: " + JSON.stringify(options));
+        console.log("Volio Email config: " + JSON.stringify(config));
+        console.log("Volio Email Settings: " + JSON.stringify(settings));
         return new Promise((resolve, reject) => {
           // Default values.
           options = _.isObject(options) ? options : {};
-          options.from = options.from || settings.defaultFrom || config.username;
-          options.replyTo = options.replyTo || settings.defaultReplyTo || config.username;
+          options.from =
+            options.from || settings.defaultFrom || config.username;
+          options.replyTo =
+            options.replyTo || settings.defaultReplyTo || config.username;
           options.text = options.text || options.html;
           options.html = options.html || options.text;
 

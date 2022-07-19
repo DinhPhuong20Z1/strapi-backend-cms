@@ -41,11 +41,20 @@ module.exports = ({ env }) => ({
   },
   email: {
     config: {
-      provider: "amazon-ses",
+      provider: "strapi-provider-email-volio",
       providerOptions: {
         key: env("AWS_SES_KEY"),
         secret: env("AWS_SES_SECRET"),
         amazon: env("AWS_SES_ENDPOINT"),
+
+        host: env("AWS_SES_ENDPOINT"), //SMTP Host
+        port: 465, //SMTP Port
+        secure: true,
+        username: env("AWS_SES_KEY"),
+        password: env("AWS_SES_SECRET"),
+        rejectUnauthorized: true,
+        requireTLS: true,
+        connectionTimeout: 1,
       },
       settings: {
         defaultFrom: env("AWS_SES_EMAIL_FROM"),
@@ -54,26 +63,6 @@ module.exports = ({ env }) => ({
       },
     },
   },
-  // email: {
-  //   config: {
-  //     provider: "strapi-provider-email-volio",
-  //     providerOptions: {
-  //       host: env("AWS_SES_ENDPOINT"), //SMTP Host
-  //       port: 465, //SMTP Port
-  //       secure: true,
-  //       username: env("AWS_SES_KEY"),
-  //       password: env("AWS_SES_SECRET"),
-  //       rejectUnauthorized: true,
-  //       requireTLS: true,
-  //       connectionTimeout: 1,
-  //     },
-  //   },
-  //   settings: {
-  //     defaultFrom: env("AWS_SES_EMAIL_FROM"),
-  //     defaultReplyTo: env("AWS_SES_EMAIL_REPLY"),
-  //     testAddress: env("AWS_SES_TESTER_EMAIL"),
-  //   },
-  // },
   ckeditor: {
     enabled: true,
     config: {
