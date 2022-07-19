@@ -41,7 +41,7 @@ module.exports = ({ env }) => ({
   },
   email: {
     config: {
-      provider: "strapi-provider-email-smtp",
+      provider: "strapi-provider-email-volio",
       providerOptions: {
         host: env("AWS_SES_ENDPOINT"), //SMTP Host
         port: 465, //SMTP Port

@@ -12,8 +12,8 @@ echo "Install dependencies ..."
 
 npm ls --depth 0
 
-# yarn install
+yarn remove strapi-provider-email-smtp
 
-# cp -f /pre/app/edit/index.js /srv/app//node_modules/@strapi/provider-email-amazon-ses/lib
+yarn install
 
 yarn develop
