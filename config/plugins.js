@@ -272,10 +272,4 @@ module.exports = ({ env }) => ({
   publisher: {
     enabled: true,
   },
-  placeholder: {
-    enabled: true,
-    config: {
-      size: 10,
-    },
-  },
 });
