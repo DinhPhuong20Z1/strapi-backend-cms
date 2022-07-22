@@ -7,20 +7,8 @@ module.exports = [
         useDefaults: true,
         directives: {
           "connect-src": ["'self'", "https:"],
-          "img-src": [
-            "'self'",
-            "data:",
-            "blob:",
-            "dl.airtable.com",
-            "volio-cms.s3.ap-southeast-1.amazonaws.com",
-          ],
-          "media-src": [
-            "'self'",
-            "data:",
-            "blob:",
-            "dl.airtable.com",
-            "volio-cms.s3.ap-southeast-1.amazonaws.com",
-          ],
+          "img-src": ["'self'", "data:", "blob:", `${env("AWS_CDN_ENDPOINT")}`],
+          "media-src": ["'self'", "data:", "blob:", `${env("AWS_CDN_ENDPOINT")}`],
           upgradeInsecureRequests: null,
         },
       },
