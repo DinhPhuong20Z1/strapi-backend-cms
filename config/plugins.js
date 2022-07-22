@@ -32,13 +32,13 @@ module.exports = ({ env }) => ({
           bucket: env("AWS_BUCKET"),
           acl: "public-read",
         },
+        baseUrl: env("AWS_CDN_ENDPOINT"),
       },
       actionOptions: {
         upload: {},
         uploadStream: {},
         delete: {},
       },
-      baseUrl: env("AWS_CDN_ENDPOINT"),
     },
   },
   email: {
