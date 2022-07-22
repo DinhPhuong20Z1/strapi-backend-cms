@@ -1,4 +1,4 @@
-module.exports = [
+module.exports = ({ env }) => [
   "strapi::errors",
   {
     name: "strapi::security",
@@ -8,7 +8,12 @@ module.exports = [
         directives: {
           "connect-src": ["'self'", "https:"],
           "img-src": ["'self'", "data:", "blob:", `${env("AWS_CDN_ENDPOINT")}`],
-          "media-src": ["'self'", "data:", "blob:", `${env("AWS_CDN_ENDPOINT")}`],
+          "media-src": [
+            "'self'",
+            "data:",
+            "blob:",
+            `${env("AWS_CDN_ENDPOINT")}`,
+          ],
           upgradeInsecureRequests: null,
         },
       },
