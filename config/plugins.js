@@ -23,13 +23,13 @@ module.exports = ({ env }) => ({
   },
   upload: {
     config: {
-      provider: "aws-s3",
+      provider: "aws-s3-advanced",
       providerOptions: {
         accessKeyId: env("AWS_ACCESS_KEY_ID"),
         secretAccessKey: env("AWS_ACCESS_SECRET"),
         region: env("AWS_REGION"),
         params: {
-          Bucket: env("AWS_BUCKET"),
+          bucket: env("AWS_BUCKET"),
         },
       },
       actionOptions: {
@@ -37,6 +37,7 @@ module.exports = ({ env }) => ({
         uploadStream: {},
         delete: {},
       },
+      baseUrl: env("AWS_CDN_ENDPOINT"),
     },
   },
   email: {
