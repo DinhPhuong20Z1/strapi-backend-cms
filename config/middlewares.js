@@ -7,11 +7,18 @@ module.exports = ({ env }) => [
         useDefaults: true,
         directives: {
           "connect-src": ["'self'", "https:"],
-          "img-src": ["'self'", "data:", "blob:", `${env("AWS_CDN_ENDPOINT")}`],
+          "img-src": [
+            "'self'",
+            "data:",
+            "blob:",
+            "volio-cms.s3.ap-southeast-1.amazonaws.com",
+            `${env("AWS_CDN_ENDPOINT")}`,
+          ],
           "media-src": [
             "'self'",
             "data:",
             "blob:",
+            "volio-cms.s3.ap-southeast-1.amazonaws.com",
             `${env("AWS_CDN_ENDPOINT")}`,
           ],
           upgradeInsecureRequests: null,
