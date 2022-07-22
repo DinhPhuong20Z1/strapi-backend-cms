@@ -30,6 +30,7 @@ module.exports = ({ env }) => ({
         region: env("AWS_REGION"),
         params: {
           bucket: env("AWS_BUCKET"),
+          acl: "public-read",
         },
       },
       actionOptions: {
