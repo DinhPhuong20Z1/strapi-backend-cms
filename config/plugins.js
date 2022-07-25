@@ -43,20 +43,14 @@ module.exports = ({ env }) => ({
   },
   email: {
     config: {
-      provider: "strapi-provider-email-volio",
+      provider: "nodemail",
       providerOptions: {
-        key: env("AWS_SES_KEY"),
-        secret: env("AWS_SES_SECRET"),
-        amazon: env("AWS_SES_ENDPOINT"),
-
-        host: env("AWS_SES_ENDPOINT"), //SMTP Host
-        port: 465, //SMTP Port
-        secure: true,
-        username: env("AWS_SES_KEY"),
-        password: env("AWS_SES_SECRET"),
-        rejectUnauthorized: true,
-        requireTLS: true,
-        connectionTimeout: 1,
+        host: env('AWS_SES_ENDPOINT'),
+        port: 465,
+        auth: {
+          user: env('AWS_SES_KEY'),
+          pass: env('AWS_SES_SECRET'),
+        },
       },
       settings: {
         defaultFrom: env("AWS_SES_EMAIL_FROM"),
