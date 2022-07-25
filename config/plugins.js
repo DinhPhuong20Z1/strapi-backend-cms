@@ -43,13 +43,13 @@ module.exports = ({ env }) => ({
   },
   email: {
     config: {
-      provider: "nodemail",
+      provider: "nodemailer",
       providerOptions: {
-        host: env('AWS_SES_ENDPOINT'),
+        host: env("AWS_SES_ENDPOINT"),
         port: 465,
         auth: {
-          user: env('AWS_SES_KEY'),
-          pass: env('AWS_SES_SECRET'),
+          user: env("AWS_SES_KEY"),
+          pass: env("AWS_SES_SECRET"),
         },
       },
       settings: {

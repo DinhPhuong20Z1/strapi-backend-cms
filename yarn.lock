@@ -11081,9 +11081,6 @@ strapi-plugin-publisher@^1.1.3:
   resolved "https://registry.npmjs.org/strapi-plugin-publisher/-/strapi-plugin-publisher-1.1.3.tgz"
   integrity sha512-ntbao9DNI0uLlC9F/rHbgGekq/bbWKXCNv348TEHEN7oaZNiH1cU02kZ9t7v2eVhXRiBVQ7bZtzCF7eWqnStfA==
 
-"strapi-provider-email-volio@file:providers/strapi-provider-email-volio":
-  version "0.0.0"
-
 strapi-provider-upload-aws-s3-advanced@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/strapi-provider-upload-aws-s3-advanced/-/strapi-provider-upload-aws-s3-advanced-4.2.1.tgz#4bdce061cff18aac185a898e4744748c75019cb8"
