@@ -6,4 +6,4 @@ include:
 variables:
   PROJECT: tech
   APP_NAME: volio-backend-web-cms
-  APPLICATIONS: volio-backend-web-cms,volio-backend-slide-show
+  APPLICATIONS: volio-backend-web-cms,volio-backend-slide-show,volio-backend-jacat-cms,volio-backend-test-cms
