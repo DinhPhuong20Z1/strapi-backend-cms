@@ -12,8 +12,6 @@ cd /srv/app
 
 echo "Install dependencies ..."
 
-npm ls --depth 0
-
 yarn install
 
 env=${ENVIRONMENT:-dev}
