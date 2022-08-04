@@ -8,6 +8,8 @@ RUN chmod -R 777 /pre/app/
 
 EXPOSE 1337
 
+RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
+
 RUN yarn install
 
 RUN yarn build
