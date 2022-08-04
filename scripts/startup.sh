@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 rm -rf /srv/app/build /srv/app/config
 
 cp -rf /pre/app/* /srv/app
@@ -14,4 +16,9 @@ npm ls --depth 0
 
 yarn install
 
-yarn develop
+env=${ENVIRONMENT:-dev}
+if [ "$env" = "prod" ]; then
+  yarn start
+else
+  yarn develop
+fi
