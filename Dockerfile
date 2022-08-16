@@ -14,7 +14,7 @@ RUN yarn install
 
 RUN NODE_ENV=production yarn build
 
-# RUN rm -rf node-modules
+RUN rm -rf node-modules
 
 ENTRYPOINT ["scripts/startup.sh"]
 
