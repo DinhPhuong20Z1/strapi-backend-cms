@@ -16,7 +16,7 @@ yarn install
 
 env=${ENVIRONMENT:-dev}
 if [ "$env" = "prod" ]; then
-  yarn start
+  NODE_ENV=production yarn develop
 else
   yarn develop
 fi
