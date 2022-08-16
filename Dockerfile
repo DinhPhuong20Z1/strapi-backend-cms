@@ -12,9 +12,9 @@ RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
 
 RUN yarn install
 
-RUN yarn build
+RUN scripts/build.sh
 
-RUN rm -rf node-modules
+# RUN rm -rf node-modules
 
 ENTRYPOINT ["scripts/startup.sh"]
 
