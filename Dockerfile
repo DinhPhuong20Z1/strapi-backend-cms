@@ -12,7 +12,7 @@ RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
 
 RUN yarn install
 
-RUN scripts/build.sh
+RUN NODE_ENV=production yarn build
 
 # RUN rm -rf node-modules
 
