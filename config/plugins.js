@@ -18,10 +18,6 @@ module.exports = ({ env }) => ({
           field: "Slug",
           references: "Name",
         },
-        Career: {
-          field: "Slug",
-          references: "Title",
-        },
       },
     },
   },
