@@ -10,17 +10,6 @@
  */
 
 module.exports = ({ env }) => ({
-  slugify: {
-    enabled: true,
-    config: {
-      contentTypes: {
-        Font: {
-          field: "Slug",
-          references: "Name",
-        },
-      },
-    },
-  },
   graphql: {
     enabled: false,
     config: {
