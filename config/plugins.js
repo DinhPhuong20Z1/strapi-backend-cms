@@ -14,11 +14,11 @@ module.exports = ({ env }) => ({
     enabled: true,
     config: {
       contentTypes: {
-        font: {
+        Font: {
           field: "slug",
           references: "name",
         },
-        career: {
+        Career: {
           field: "slug",
           references: "title",
         },
