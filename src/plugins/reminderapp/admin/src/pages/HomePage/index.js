@@ -45,12 +45,10 @@ async function updateReminder(id,data){
 }
 
 function addReminder(data){
-  console.log("123");
   ReminderApiHandler.addReminder({"remindername":data.remindername,"date":data.date,"datetime":new Date(data.date),"isdatepassed":false})
 FetchReminders()
 }
 
-// addReminder({remindername: "123", date: "2022-12-12"})
 
 
 React.useEffect(()=>{
