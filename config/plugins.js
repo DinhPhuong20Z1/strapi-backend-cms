@@ -10,6 +10,10 @@
  */
 
 module.exports = ({ env }) => ({
+  'reminderapp': {
+    enabled: true,
+    resolve: './src/plugins/reminderapp'
+  },
   graphql: {
     enabled: false,
     config: {

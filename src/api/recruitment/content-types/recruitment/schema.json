@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recruitments",
+  "info": {
+    "singularName": "recruitment",
+    "pluralName": "recruitments",
+    "displayName": "Recruitment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Introduction": {
+      "type": "string"
+    },
+    "Website": {
+      "type": "string"
+    },
+    "CareerTitle": {
+      "type": "string"
+    },
+    "CareerType": {
+      "type": "string"
+    }
+  }
+}
