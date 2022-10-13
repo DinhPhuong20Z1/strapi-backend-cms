@@ -14,6 +14,10 @@ module.exports = ({ env }) => ({
     enabled: true,
     resolve: './src/plugins/reminderapp'
   },
+  'recruitment': {
+    enabled: true,
+    resolve: './src/plugins/recruitment'
+  },
   graphql: {
     enabled: false,
     config: {
