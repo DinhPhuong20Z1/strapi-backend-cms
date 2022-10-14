@@ -1,0 +1,27 @@
+.max-width-recruitment {
+  max-width: 300px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  color: rgb(50, 50, 77);
+}
+.title-file {
+  display: block;
+}
+.title-file:not(:last-child) {
+  margin-bottom: 15px;
+}
+a.title-file {
+  text-decoration: none;
+  color: #39f;
+}
+.btn-details svg path{
+  fill: #000 !important;
+}
+.btn-details svg {
+  height: 30px;
+width: 30px;
+}

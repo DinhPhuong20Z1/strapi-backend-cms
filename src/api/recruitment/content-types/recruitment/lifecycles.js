@@ -20,17 +20,18 @@ module.exports = {
 
 
       // Noty to HR
-      await strapi.plugins['email'].services.email.send({
-        to: 'phuongdd@volio.vn',
-        from: 'info@volio.vn', // e.g. single sender verification in SendGrid
-        cc: 'info@volio.vn',
-        bcc: 'info@volio.vn',
-        replyTo: 'info@volio.vn',
-        subject: '"Ứng viên gửi Jobs"',
-        text:`Bạn vừa nhận được Jobs của ${result.Name} ứng tuyển ${result.CareerTitle} vị trí ${result.CareerType}`,
-      })
+      if(result.CareerTitle || result.CareerType) {
+        await strapi.plugins['email'].services.email.send({
+          to: 'phuongdd@volio.vn',
+          from: 'info@volio.vn', // e.g. single sender verification in SendGrid
+          cc: 'info@volio.vn',
+          bcc: 'info@volio.vn',
+          replyTo: 'info@volio.vn',
+          subject: '"Ứng viên gửi Jobs"',
+          text:`Bạn vừa nhận được Jobs của ${result.Name} ứng tuyển ${result.CareerTitle} vị trí ${result.CareerType}`,
+        })
 
-      // Thank you letter
+        // Thank you letter
       await strapi.plugins['email'].services.email.send({
         to: result.Email,
         from: 'info@volio.vn', // e.g. single sender verification in SendGrid
@@ -40,6 +41,32 @@ module.exports = {
         subject: 'Công ty TNHH Volio Việt Nam',
         text:`Cảm ơn bạn ${result.Name} đã ứng tuyển job ${result.CareerTitle}. Chúng tôi sẽ phản hồi thông tin sớm nhất với bạn.`,
       })
+      } else {
+
+        await strapi.plugins['email'].services.email.send({
+          to: 'phuongdd@volio.vn',
+          from: 'info@volio.vn', // e.g. single sender verification in SendGrid
+          cc: 'info@volio.vn',
+          bcc: 'info@volio.vn',
+          replyTo: 'info@volio.vn',
+          subject: '"Liên hệ volio"',
+          text:`Bạn vừa nhận được đơn liên hệ của ${result.Name}`,
+        })
+
+        // Thank you letter
+      await strapi.plugins['email'].services.email.send({
+        to: result.Email,
+        from: 'info@volio.vn', // e.g. single sender verification in SendGrid
+        cc: 'info@volio.vn',
+        bcc: 'info@volio.vn',
+        replyTo: 'info@volio.vn',
+        subject: 'Công ty TNHH Volio Việt Nam',
+        text:`Cảm ơn bạn ${result.Name} đã gửi yêu cầu tới chúng tôi. Chúng tôi sẽ phản hồi thông tin sớm nhất với bạn.`,
+      })
+      }
+
+
+
 
   } catch(err) {
       console.log("err nay",err);

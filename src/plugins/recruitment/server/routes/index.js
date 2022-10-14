@@ -7,4 +7,13 @@ module.exports = [
       policies: [],
     },
   },
+  // {
+  //   method: 'GET',
+  //   path: '/api/recruitments',
+  //   handler: 'recruitment.recruitment',
+  //   config: {
+  //     policies: [],
+  //     auth:false,
+  //   },
+  // },
 ];
