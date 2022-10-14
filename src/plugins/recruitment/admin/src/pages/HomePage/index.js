@@ -73,7 +73,24 @@ const HomePage = () => {
           <Tbody>
             {recruitmentList.map((i) => {
               return (
-                <Tr>
+                <Tr
+                className="tr-click"
+                onClick={() => {
+                  Seedetails({
+                    id: i.id,
+                    name: i.attributes.Name,
+                    email: i.attributes.Email,
+                    phone: i.attributes.Phone,
+                    file: i.attributes.Files,
+                    introduction: i.attributes.Introduction,
+                    careerTitle: i.attributes.CareerTitle,
+                    careerType: i.attributes.CareerType,
+                    createdAt: i.attributes.createdAt,
+                  });
+                  SetModalVisible(true)
+                  // setIsEdit(true);
+                }}
+                >
                   <Td>
                     <Typography textColor="neutral800">{i.id}</Typography>
                   </Td>

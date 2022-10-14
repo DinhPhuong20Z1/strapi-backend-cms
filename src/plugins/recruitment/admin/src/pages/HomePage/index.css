@@ -18,10 +18,14 @@ a.title-file {
   text-decoration: none;
   color: #39f;
 }
-.btn-details svg path{
+.btn-details svg path {
   fill: #000 !important;
 }
 .btn-details svg {
   height: 30px;
-width: 30px;
+  width: 30px;
+}
+
+.tr-click {
+  cursor: pointer;
 }
