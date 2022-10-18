@@ -51,7 +51,6 @@ const HomePage = () => {
       }
     );
 
-    console.log("data.data",data.data)
 
     setPagination(data.meta);
     setRecruitment(data.data);
