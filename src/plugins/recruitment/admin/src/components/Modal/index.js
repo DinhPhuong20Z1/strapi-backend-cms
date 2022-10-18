@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   ModalLayout,
@@ -14,8 +14,19 @@ import { Textarea } from "@strapi/design-system/Textarea";
 import { Box } from "@strapi/design-system/Box";
 import { GridLayout } from "@strapi/design-system/Layout";
 
+import { Input, Form } from "antd";
+
+
+const { TextArea } = Input;
 export default function Modal({ setShowModal, dataSeedetails }) {
   const [date, setDate] = useState(dataSeedetails.createdAt);
+  const [form] = Form.useForm();
+
+  useEffect(() => {
+    form.setFieldsValue({
+      introduction: dataSeedetails.introduction,
+    });
+  },[])
 
   return (
     <>
@@ -36,101 +47,104 @@ export default function Modal({ setShowModal, dataSeedetails }) {
         </ModalHeader>
 
         <ModalBody>
+          <GridLayout>
+            <TextInput
+              placeholder="Name"
+              label="Name"
+              name="text"
+              value={dataSeedetails.name}
+            />
+            <TextInput
+              placeholder="Email"
+              label="Email"
+              name="text"
+              value={dataSeedetails.email}
+            />
+            <TextInput
+              placeholder="Phone"
+              label="Phone"
+              name="text"
+              value={dataSeedetails.phone}
+            />
 
-            <GridLayout>
-              <TextInput
-                placeholder="Name"
-                label="Name"
-                name="text"
-                value={dataSeedetails.name}
-              />
-              <TextInput
-                placeholder="Email"
-                label="Email"
-                name="text"
-                value={dataSeedetails.email}
-              />
-              <TextInput
-                placeholder="Phone"
-                label="Phone"
-                name="text"
-                value={dataSeedetails.phone}
-              />
+            <TextInput
+              placeholder="CareerTitle"
+              label="CareerTitle"
+              name="CareerTitle"
+              value={dataSeedetails.careerTitle}
+            />
+            <TextInput
+              placeholder="CareerType"
+              label="CareerType"
+              name="CareerType"
+              value={dataSeedetails.careerType}
+            />
 
-              <TextInput
-                placeholder="CareerTitle"
-                label="CareerTitle"
-                name="CareerTitle"
-                value={dataSeedetails.careerTitle}
-              />
-              <TextInput
-                placeholder="CareerType"
-                label="CareerType"
-                name="CareerType"
-                value={dataSeedetails.careerType}
-              />
+            <DatePicker
+              name="datepicker"
+              label="CreatedAt"
+              selectedDate={new Date(date)}
+              onChange={setDate}
+              selectedDateLabel={(formattedDate) =>
+                `Date picker, current is ${formattedDate}`
+              }
+              disabled
+            />
 
-              <DatePicker
-                name="datepicker"
-                label="CreatedAt"
-                selectedDate={new Date(date)}
-                onChange={setDate}
-                selectedDateLabel={(formattedDate) =>
-                  `Date picker, current is ${formattedDate}`
-                }
-                disabled
-              />
-
-              <Textarea
-                size="S"
-                placeholder="Introduction"
+            <Form form={form}>
+              <Form.Item
+                name="introduction"
                 label="Introduction"
-                name="Introduction"
+                className="introduction-input"
               >
-                {dataSeedetails.introduction}
-              </Textarea>
+                <TextArea
+                  rows={6}
+                  placeholder="Introduction"
+                  maxLength={10}
+                />
+              </Form.Item>
+            </Form>
 
-              <div>
-                <Typography
-                  className="title-file max-width-recruitment"
-                  textColor="neutral800"
-                >
-                  List File
-                </Typography>
-                <div className="List-file">
-                  {dataSeedetails &&
-                    dataSeedetails.file.length > 0 &&
-                    dataSeedetails.file.map((file) => {
-                      return (
-                        <>
-                          {file.LinkFile ? (
-                            <>
-                              <a
-                                target="_blank"
-                                href={file.LinkFile}
-                                className="title-file"
-                                textColor="neutral800"
-                              >
-                                {file.Title}
-                              </a>
-                            </>
-                          ) : (
-                            <>
-                              <Typography
-                                className="title-file"
-                                textColor="neutral800"
-                              >
-                                {file.Title}
-                              </Typography>
-                            </>
-                          )}
-                        </>
-                      );
-                    })}
-                </div>
+            <div>
+              <Typography
+                className="title-file max-width-recruitment"
+                textColor="neutral800"
+              >
+                List File
+              </Typography>
+              <div className="List-file">
+                {dataSeedetails &&
+                  dataSeedetails.file.length > 0 &&
+                  dataSeedetails.file.map((file) => {
+                    return (
+                      <>
+                        {file.URL ? (
+                          <>
+                            <a
+                              target="_blank"
+                              href={file.URL}
+                              className="title-file"
+                              textColor="neutral800"
+                            >
+                              {file.Title}
+                            </a>
+                          </>
+                        ) : (
+                          <>
+                            <Typography
+                              className="title-file"
+                              textColor="neutral800"
+                            >
+                              {file.Title}
+                            </Typography>
+                          </>
+                        )}
+                      </>
+                    );
+                  })}
               </div>
-            </GridLayout>
-
+            </div>
+          </GridLayout>
         </ModalBody>
 
         <ModalFooter

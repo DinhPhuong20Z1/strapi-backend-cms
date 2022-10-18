@@ -1,5 +1,5 @@
 .max-width-recruitment {
-  max-width: 300px;
+  max-width: 160px;
   display: block;
   white-space: nowrap;
   overflow: hidden;
@@ -28,4 +28,15 @@ a.title-file {
 
 .tr-click {
   cursor: pointer;
+}
+
+.introduction-input .ant-row {
+  display: block;
+}
+
+.introduction-input .ant-row label {
+  font-weight: 600;
+  color: #32324d;
+  font-size: 0.75rem;
+  line-height: 1.33;
 }
